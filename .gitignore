@@ -15,7 +15,9 @@ wrangler/
 
 # 環境変数・秘密情報（絶対にコミットしない）
 .env
-.env.*
+.env.local
+.env.*.local
+# .env.example はテンプレートなのでコミットOK
 *.pem
 *.key
 vapid_private*
