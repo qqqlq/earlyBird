@@ -1,0 +1,33 @@
+# 依存関係
+node_modules/
+.pnp
+.pnp.js
+
+# ビルド成果物
+dist/
+build/
+.output/
+
+# Cloudflare / Wrangler
+.dev.vars
+.dev.vars.*
+wrangler/
+
+# 環境変数・秘密情報（絶対にコミットしない）
+.env
+.env.*
+*.pem
+*.key
+vapid_private*
+
+# エディタ
+.DS_Store
+.vscode/settings.json
+*.swp
+*.swo
+
+# テスト
+coverage/
+
+# Vite
+*.local
