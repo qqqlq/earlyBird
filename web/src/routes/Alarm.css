@@ -1,0 +1,181 @@
+.alarm-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: var(--bg);
+  z-index: 1000;
+  padding: 24px;
+  text-align: center;
+}
+
+/* タップして起きる画面 */
+.alarm-screen.tap {
+  background: #1a1a2e;
+}
+
+.tap-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  justify-content: center;
+  box-shadow:
+    0 0 0 20px rgba(233, 69, 96, 0.15),
+    0 0 0 40px rgba(233, 69, 96, 0.07);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.tap-icon {
+  font-size: 3rem;
+}
+
+.tap-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tap-hint {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* 筋トレ中の画面 */
+.alarm-screen.exercising {
+  gap: 32px;
+}
+
+.exercise-instruction {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.rep-counter {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-track {
+  stroke: var(--surface2);
+}
+
+.progress-fill {
+  stroke: var(--accent);
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.rep-numbers {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.rep-current {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.rep-slash {
+  font-size: 2rem;
+  color: var(--text-muted);
+}
+
+.rep-target {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.rep-remain {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.btn-debug {
+  background: var(--surface2);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+/* 完了画面 */
+.alarm-screen.done {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+}
+
+.done-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.done-icon {
+  font-size: 5rem;
+  color: #4caf50;
+}
+
+.done-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.done-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.btn-dismiss {
+  margin-top: 24px;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 14px 32px;
+  font-size: 1rem;
+}
+
+/* エラー画面 */
+.alarm-screen.error .error-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.alarm-screen.error h2 {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.alarm-screen.error p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
