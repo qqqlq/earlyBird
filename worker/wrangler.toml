@@ -8,8 +8,8 @@ crons = ["* * * * *"]
 
 [[kv_namespaces]]
 binding = "ALARMS_KV"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
+id = "fd35f7003e424c6191d34dd3ea361007"
+preview_id = "ea8281ab2b404ce2b60acd4cd4382fb1"
 
 [vars]
 # VAPID公開鍵（秘密情報ではないのでここに置いてよい）
