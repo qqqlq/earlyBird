@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 16px 80px;
+  /* ノッチ/Dynamic Island対応: safe-area-insetで上の余白を確保 */
+  padding: max(24px, env(safe-area-inset-top)) 16px 80px;
   max-width: 480px;
   margin: 0 auto;
   width: 100%;
@@ -157,6 +158,11 @@
   padding: 10px 12px;
   font-size: 1.2rem;
   width: 100%;
+  /* iOS Safariでtype="time"がはみ出るのを防ぐ */
+  max-width: 100%;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
   outline: none;
 }
 
