@@ -22,6 +22,16 @@ wrangler/
 *.key
 vapid_private*
 
+# Wrangler内部
+.wrangler/
+
+# スクリーンショット（作業用）
+*.png
+*.jpg
+*.jpeg
+*.PNG
+*.JPG
+
 # エディタ
 .DS_Store
 .vscode/settings.json

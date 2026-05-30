@@ -88,10 +88,16 @@ earlyBird/
 
 ## チェンジログ
 
+### v0.2.0 (2026-05-31)
+- デプロイ完了・動作確認済み（iPhone実機）
+  - Push通知の受信・アラーム音の再生・スクワット検出・停止まで一通り動作
+- iOS Safari通常タブでの `Notification` 未定義クラッシュを修正
+- Dynamic Island/ノッチへのsafe-area-inset対応
+- iOS Safariでの `type="time"` input はみ出しを修正
+
 ### v0.1.0 (2026-05-30)
 - 初回実装
 - アラーム設定UI（時刻・曜日・スクワット回数）
 - Web Push通知（Cloudflare WorkerのCronで毎分判定、/ackまで再送）
 - DeviceMotionによるスクワット実検出
 - Wake Lock・Web Audio大音量ループ
-- Cloudflare Access統合
