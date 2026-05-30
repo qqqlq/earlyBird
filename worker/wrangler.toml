@@ -1,0 +1,19 @@
+name = "earlybird-worker"
+main = "src/index.ts"
+compatibility_date = "2025-05-30"
+compatibility_flags = ["nodejs_compat"]
+
+[triggers]
+crons = ["* * * * *"]
+
+[[kv_namespaces]]
+binding = "ALARMS_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
+
+[vars]
+# VAPID公開鍵（秘密情報ではないのでここに置いてよい）
+VAPID_PUBLIC_KEY = "BClgVC_A_jfwOl9aleexNpWNoi42S4gAhcMgo3M-yap5RpY7Xe-xhCyinyRCuMOrwBtmXGrKavtaRYI8a4-0GXI"
+FRONT_ORIGIN = "https://earlybird.nodewalker.app"
+# ALARM_TIMEOUT_MINUTES: firingのタイムアウト（分）
+ALARM_TIMEOUT_MINUTES = "30"
