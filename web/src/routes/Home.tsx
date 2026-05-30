@@ -62,6 +62,8 @@ export function Home() {
 
   // 通知許可状態を確認
   useEffect(() => {
+    // iOS Safariの通常タブではNotificationが未定義のためガードする
+    if (typeof Notification === 'undefined') return;
     if (Notification.permission === 'granted') {
       setNotifStatus('granted');
       // 既存のsubscriptionを取得
@@ -77,6 +79,7 @@ export function Home() {
 
   // SWからのALARM_TRIGGEREDメッセージを受信
   useEffect(() => {
+    if (!('serviceWorker' in navigator)) return;
     const handler = (event: MessageEvent<{ type: string }>) => {
       if (event.data?.type === 'ALARM_TRIGGERED') {
         window.location.hash = '#alarm';
@@ -163,7 +166,12 @@ export function Home() {
       {/* 通知許可バナー */}
       {notifStatus !== 'granted' && (
         <div className="banner">
-          {notifStatus === 'denied' ? (
+          {typeof Notification === 'undefined' ? (
+            // iOS Safari通常タブ：Notification未対応のため案内を表示
+            <p className="banner-text">
+              iOSでアラームを受け取るには、Safari の「共有」→「ホーム画面に追加」でインストールしてください。
+            </p>
+          ) : notifStatus === 'denied' ? (
             <p className="banner-text error">
               通知がブロックされています。ブラウザ設定から許可してください。
             </p>
