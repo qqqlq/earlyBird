@@ -1,3 +1,14 @@
+// Web Push Subscription JSON（DOMに依存しない独自定義）
+export type PushSubscriptionJSON = {
+  endpoint: string;
+  expirationTime?: number | null;
+  keys?: {
+    p256dh?: string;
+    auth?: string;
+    [key: string]: string | undefined;
+  };
+};
+
 export type Alarm = {
   id: string;
   time: string;       // "HH:MM"
